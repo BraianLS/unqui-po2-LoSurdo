@@ -12,7 +12,9 @@ public class ReciboDeHaberes {
 		private double sueldoNeto = getEmpleado().consultaSueldoNeto(); 
 			
 		public ReciboDeHaberes() {}
-	//	Si consigo estos datos del empleado, no necesito inicializar estas variables colocando los valores manualmente en su creacion, pero no sé cual de las 2 formas seria "la correcta".
+	/*	Si consigo estos datos del empleado, no necesito inicializar estas variables colocando los
+	 *  valores manualmente en su creacion, pero no sé cual de las 2 formas seria "la correcta".
+	 */
 	//	public ReciboDeHaberes(Empleado empleado, String nombre, String direccion, Date fechaDeEmision, int sueldoBruto,double sueldoNeto) {
 		public ReciboDeHaberes(Empleado empleado, Date fechaDeEmision) {
 		/* el constructor de eclipse me lo genera con un llamado a la superclase,

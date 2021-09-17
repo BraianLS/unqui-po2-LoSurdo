@@ -54,6 +54,7 @@ public class Empresa {
 			}
 			
 		}
+		// void o un return de ReciboDeHaberes?? 
 		private void crearReciboSueldoPara(Empleado empleado, Date fechaDeHoy) {
 			ReciboDeHaberes reciboHaber = new ReciboDeHaberes(empleado,fechaDeHoy);
 		}
