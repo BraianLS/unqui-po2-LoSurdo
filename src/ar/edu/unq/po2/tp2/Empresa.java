@@ -9,7 +9,7 @@ public class Empresa {
 		private String nombre;
 		private int cuit;
 		private Collection<Empleado> empleados = new ArrayList<Empleado>();
-		private int montoTotal;
+
  /* No sé si en estos casos es realmente necesario volver a crear el constructor empresa sin parametros si nunca se usará*/		
 		public Empresa() { 
 			
