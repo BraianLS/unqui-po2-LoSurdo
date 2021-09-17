@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.tp2;
 
-import java.util.Date;
+
+import java.util.Calendar;
 
 public final class Permanente extends Empleado{
 	
@@ -11,7 +12,7 @@ public final class Permanente extends Empleado{
 		
 	}
 
-	public Permanente(String nombre, String direccion, String estadoCivil, Date fechaNacimiento, int sueldoBasico, int cantidadHijos, int antigüedad) {
+	public Permanente(String nombre, String direccion, String estadoCivil, Calendar fechaNacimiento, int sueldoBasico, int cantidadHijos, int antigüedad) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.estadoCivil = estadoCivil;

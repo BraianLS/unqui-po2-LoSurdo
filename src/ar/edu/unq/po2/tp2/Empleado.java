@@ -1,13 +1,15 @@
 package ar.edu.unq.po2.tp2;
 
+import java.util.Calendar;
 import java.util.Date;
+
 
 public abstract class Empleado {
 		
 		protected String nombre;
 		protected String direccion;
 		protected String estadoCivil; // Soltero o Casado
-		protected Date fechaNacimiento;
+		protected Calendar fechaNacimiento;
 		protected int sueldoBasico;
 		
 		public String getNombre() {
@@ -19,7 +21,7 @@ public abstract class Empleado {
 		public String getEstadoCivil() {
 			return estadoCivil;
 		}
-		public Date getFechaNacimiento() {
+		public Calendar getFechaNacimiento() {
 			return fechaNacimiento;
 		}
 		public int getSueldoBasico() {
@@ -27,10 +29,20 @@ public abstract class Empleado {
 		}
 		
 		public int consultaEdad() {
-			/*	En algun momentó veré bien como funciona la clase Date y completaré este metodo, basicamente quiero realizar una resta entre fechas
-			 */
-			return 0;
+			/*	No da un valor correcto en caso de borde*/
+			return this.ActualDate().get(Calendar.YEAR) - this.getFechaNacimiento().get(Calendar.YEAR);
 		}
+		private Calendar ActualDate() {
+			
+			return this.toCalendar(Calendar.getInstance().getTime());
+
+		}
+		public Calendar toCalendar(Date date){ 
+			Calendar cal = Calendar.getInstance();
+			cal.setTime(date);
+			  return cal;
+		}
+		
 		public double consultaSueldoNeto() {
 			return this.consultaSueldoBruto() - this.retencionesAplicadas();
 		}

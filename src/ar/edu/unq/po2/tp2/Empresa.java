@@ -13,12 +13,26 @@ public class Empresa {
  /* No sé si en estos casos es realmente necesario volver a crear el constructor empresa sin parametros si nunca se usará*/		
 		public Empresa() { 
 			
-		} /* Acá no se muy bien si vá Collection<Empleado> o Empleado[] como tipo de la lista de empleados*/
+		} /* Acá no se muy bien si vá Collection<Empleado> o Empleado[] como tipo de la lista de empleados,pero como no parece que rompa estará bien supongo*/
 		public Empresa(String nombre,int cuit, Collection<Empleado> empleados) {
 			this.nombre = nombre;
 			this.cuit = cuit;
 			this.empleados = empleados;
-		}  // Lo hice como un retorno de un valor númerico, si lo que querian era un string que dijera el monto total bruto es: + montoTotal ,mis disculpas por no entenderlos
+		}  
+		
+		public Collection<Empleado> getEmpleados() {
+			return empleados;
+		}
+		public void setEmpleados(Collection<Empleado> empleados) {
+			this.empleados = empleados;
+		}
+		public String getNombre() {
+			return nombre;
+		}
+		public int getCuit() {
+			return cuit;
+		}
+		// Lo hice como un retorno de un valor númerico, si lo que querian era un string que dijera el monto total bruto es: + montoTotal ,mis disculpas por no entenderlos
 		public int consultaMontoTotalBruto() {
 			
 			

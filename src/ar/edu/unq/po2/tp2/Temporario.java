@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.tp2;
 
 import java.util.Date;
+import java.util.Calendar;
 
 public final class Temporario extends Empleado{
 
@@ -12,7 +13,7 @@ public final class Temporario extends Empleado{
 	}
 
 
-	public Temporario(String nombre, String direccion, String estadoCivil, Date fechaNacimiento, int sueldoBasico, Date fechaFinDesignacion, int horasExtras) {
+	public Temporario(String nombre, String direccion, String estadoCivil, Calendar fechaNacimiento, int sueldoBasico, Date fechaFinDesignacion, int horasExtras) {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.estadoCivil = estadoCivil;
