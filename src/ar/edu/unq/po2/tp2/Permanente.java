@@ -30,12 +30,12 @@ public final class Permanente extends Empleado{
 	
 	@Override
 	public int consultaSueldoBruto() {
-		// TODO Auto-generated method stub
+		
 		return this.getSueldoBasico() + this.salarioFamiliar();
 	}
 
 	private int salarioFamiliar() {
-		// TODO Auto-generated method stub
+		
 		return this.asignacionPorAntigüedad() + this.asignacionPorConyuge() + this.asignacionPorHijo();
 	}
 	
