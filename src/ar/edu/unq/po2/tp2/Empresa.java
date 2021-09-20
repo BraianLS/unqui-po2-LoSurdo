@@ -2,13 +2,13 @@ package ar.edu.unq.po2.tp2;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
 public class Empresa {
 	
 		private String nombre;
 		private int cuit;
 		private Collection<Empleado> empleados = new ArrayList<Empleado>();
+		private Collection<ReciboDeHaberes> recibos = new ArrayList<ReciboDeHaberes>();
 
  /* No sé si en estos casos es realmente necesario volver a crear el constructor empresa sin parametros si nunca se usará*/		
 		public Empresa() { 
@@ -64,12 +64,9 @@ public class Empresa {
 		public void liquidarSueldos() {
 			
 			for (Empleado empleado:empleados ) {
-				// hacer un nuevo recibo de haberes para ese empleado
+				
+				recibos.add(new ReciboDeHaberes(empleado));
 			}
 			
-		}
-		// void o un return de ReciboDeHaberes?? 
-		private void crearReciboSueldoPara(Empleado empleado, Date fechaDeHoy) {
-			ReciboDeHaberes reciboHaber = new ReciboDeHaberes(empleado,fechaDeHoy);
 		}
 }

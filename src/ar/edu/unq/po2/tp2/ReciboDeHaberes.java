@@ -1,13 +1,13 @@
 package ar.edu.unq.po2.tp2;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class ReciboDeHaberes {
 	// me pareció buena idea hacer un atributo llamado empleado de tipo Empleado, y esta forma que permitir que se rellenen los demás atributos automaticamente
 		private Empleado empleado;
 		private String nombre = getEmpleado().getNombre(); 
 		private String direccion = getEmpleado().getDireccion(); 
-		private Date fechaDeEmision;
+		private Calendar fechaDeEmision = getEmpleado().actualDate();
 		private int sueldoBruto = getEmpleado().consultaSueldoBruto(); 
 		private double sueldoNeto = getEmpleado().consultaSueldoNeto(); 
 			
@@ -15,15 +15,15 @@ public class ReciboDeHaberes {
 	/*	Si consigo estos datos del empleado, no necesito inicializar estas variables colocando los
 	 *  valores manualmente en su creacion, pero no sé cual de las 2 formas seria "la correcta".
 	 */
-	//	public ReciboDeHaberes(Empleado empleado, String nombre, String direccion, Date fechaDeEmision, int sueldoBruto,double sueldoNeto) {
-		public ReciboDeHaberes(Empleado empleado, Date fechaDeEmision) {
+	//	public ReciboDeHaberes(Empleado empleado, String nombre, String direccion, Calendar fechaDeEmision, int sueldoBruto,double sueldoNeto) {
+		public ReciboDeHaberes(Empleado empleado) {
 		/* el constructor de eclipse me lo genera con un llamado a la superclase,
 		no sé en que ocaciones será necesario realizar esto cuando la clase creada no hereda de nadie más */
 			super();
 			this.empleado = empleado;
 		//	this.nombre = nombre;        
 		//	this.direccion = direccion;
-			this.fechaDeEmision = fechaDeEmision;
+		//	this.fechaDeEmision = fechaDeEmision;
 		//	this.sueldoBruto = sueldoBruto;
 		//	this.sueldoNeto = sueldoNeto;
 		}
@@ -42,10 +42,10 @@ public class ReciboDeHaberes {
 		public void setDireccion(String direccion) {
 			this.direccion = direccion;
 		}
-		public Date getFechaDeEmision() {
+		public Calendar getFechaDeEmision() {
 			return fechaDeEmision;
 		}
-		public void setFechaDeEmision(Date fechaDeEmision) {
+		public void setFechaDeEmision(Calendar fechaDeEmision) {
 			this.fechaDeEmision = fechaDeEmision;
 		}
 		public int getSueldoBruto() {

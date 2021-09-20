@@ -72,7 +72,7 @@ public final class Permanente extends Empleado{
 		return this.consultaSueldoBruto() * 0.15;
 	}
 
-	@Override
+	@Override  //No se si querian un atributo de tipo string que se encargara de del desgloce de conceptos y o directamente un metodo que lo retornara segun cada caso(no sabia si usar o no el println,pero para una cuestion de prueba de codigo lo coloqué)
 	public void consultaDeConceptos() {
 		System.out.println("Sueldo Basico: " + this.getSueldoBasico());  
 		System.out.println("Asignacion por hijo: " + this.asignacionPorHijo());
