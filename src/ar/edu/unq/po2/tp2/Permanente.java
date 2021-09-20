@@ -55,11 +55,6 @@ public final class Permanente extends Empleado{
 	private int asignacionPorAntigüedad() {
 		return 50 * this.getAntigüedad();
 	}
-	
-	@Override
-	public double retencionesAplicadas() {
-		return this.costeObraSocial() + this.costeAporteJubilatorio();
-	}
 
 	@Override
 	protected double costeObraSocial() {

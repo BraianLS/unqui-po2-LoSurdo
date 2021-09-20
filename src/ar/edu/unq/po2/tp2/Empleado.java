@@ -46,8 +46,11 @@ public abstract class Empleado {
 		public double consultaSueldoNeto() {
 			return this.consultaSueldoBruto() - this.retencionesAplicadas();
 		}
+		
+		protected  double retencionesAplicadas() {
+			return this.costeObraSocial() + this.costeAporteJubilatorio();
+		}
 		protected abstract int consultaSueldoBruto();
-		protected abstract double retencionesAplicadas();
 		protected abstract double costeObraSocial();
 		protected abstract double costeAporteJubilatorio();
 		protected abstract void consultaDeConceptos();

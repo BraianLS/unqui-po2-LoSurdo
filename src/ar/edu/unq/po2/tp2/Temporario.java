@@ -45,12 +45,6 @@ public final class Temporario extends Empleado{
 	}
 
 	@Override
-	public double retencionesAplicadas() {
-		// TODO Auto-generated method stub
-		return this.costeObraSocial() + this.costeAporteJubilatorio() ;
-	}
-
-	@Override
 	protected double costeObraSocial() {
 		
 		return this.consultaSueldoBruto() * 0.10 + this.impuestoPorEdad();
