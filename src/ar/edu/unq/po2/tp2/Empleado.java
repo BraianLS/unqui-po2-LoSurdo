@@ -30,17 +30,7 @@ public abstract class Empleado {
 		
 		public int consultaEdad() {
 			/*	No da un valor correcto en caso de borde*/
-			return this.actualDate().get(Calendar.YEAR) - this.getFechaNacimiento().get(Calendar.YEAR);
-		} //Quizá lo ideal seria crear una clase que se encargue del manejo de la hora actual,las conversiones,etc.
-		public Calendar actualDate() {
-			
-			return this.toCalendar(Calendar.getInstance().getTime());
-
-		}
-		public Calendar toCalendar(Date date){ 
-			Calendar cal = Calendar.getInstance();
-			cal.setTime(date);
-			  return cal;
+			return Calendario.diferenciaDeAñosActual(this.getFechaNacimiento());
 		}
 		
 		public double consultaSueldoNeto() {

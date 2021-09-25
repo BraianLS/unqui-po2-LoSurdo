@@ -1,8 +1,8 @@
 package ar.edu.unq.po2.tp3;
 
 public class Point {
-		int x = 0;
-		int y = 0;
+		private int x = 0;
+		private int y = 0;
 		
 		public int getX() {
 			return x;

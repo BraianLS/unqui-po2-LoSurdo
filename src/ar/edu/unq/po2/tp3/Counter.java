@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Counter {
 	
-	List<Integer> arregloDeEnteros = new ArrayList<Integer>();
+	private List<Integer> arregloDeEnteros = new ArrayList<Integer>();
 	//private int[] arregloDeEnteros = new int[] {1,2,3,4,5,6,7,8,9};
 	
 	public List<Integer> getArregloDeEnteros() {

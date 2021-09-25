@@ -7,7 +7,7 @@ public class ReciboDeHaberes {
 		private Empleado empleado;
 		private String nombre = getEmpleado().getNombre(); 
 		private String direccion = getEmpleado().getDireccion(); 
-		private Calendar fechaDeEmision = getEmpleado().actualDate();
+		private Calendar fechaDeEmision = Calendario.actualDate();
 		private int sueldoBruto = getEmpleado().consultaSueldoBruto(); 
 		private double sueldoNeto = getEmpleado().consultaSueldoNeto(); 
 			
