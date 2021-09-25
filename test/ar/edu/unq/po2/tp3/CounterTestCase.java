@@ -135,5 +135,20 @@ class CounterTestCase {
 		int number = counter.numeroConMayorCantidadDePares(counter.getArregloDeEnteros());
 		assertEquals(45000, number);
 	}
-	
+	@Test
+	public void testMultiplosDe() { //divisores de 8 
+		List<Integer> esperado = new ArrayList<Integer>();
+		esperado.add(1);
+		esperado.add(2);
+		esperado.add(4);
+		esperado.add(8);
+		List<Integer> actual = counter.multiploDe(8);
+		assertEquals(esperado, actual);
+	}
+	@Test
+	public void testMultiploMasAltoDe() { 
+		int esperado = -1;
+		int actual = counter.multiploMasAltoDe(1000,6);
+		assertEquals(esperado, actual);
+	}
 }

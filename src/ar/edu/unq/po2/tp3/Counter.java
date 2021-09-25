@@ -37,13 +37,34 @@ public class Counter {
 		arregloDeEnteros.add(i);
 		
 	}
-	// en vez de multiplos no querrá los divisores?? 
+	// en vez de multiplos no querrá los divisores??
+	
 	public List<Integer> multiploDe(int number){
 		List<Integer> multiplos = new ArrayList<Integer>();
-		
+		    int numero = number;
+		    //iteras desde 1 hasta el numero para encontrar los divisores
+		    for(int i = 1 ; i <=numero ; i++){
+		        if(numero%i==0){
+		            multiplos.add(i);
+		        }
+		    }
 		
 		return multiplos;
 		
+	}
+	// X e Y deben ser > 0
+	public int multiploMasAltoDe(int x,int y){
+		int contador = 1000;
+		while (contador != 0){
+			List<Integer> divisores = this.multiploDe(contador);
+			if(divisores.contains(x) && divisores.contains(y)){
+				return contador;
+				}
+			else {
+				contador--;
+			}
+		}
+		return -1;
 	}
 	
 	public int digitsOf(int number) {
@@ -117,4 +138,5 @@ public class Counter {
 
 		return lista.get(indexDeLaListaConNumeroConMasPares(lista));
 	}
+	
 }
