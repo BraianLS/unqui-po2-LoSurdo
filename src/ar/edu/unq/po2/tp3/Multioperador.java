@@ -8,21 +8,24 @@ public class Multioperador {
 		
 		
 		public int sumador(List<Integer> lista) {
-
+			
+			valor = 0;
 			lista.stream().forEach((numero)->{
 				valor = valor + numero;
 			});
 			return valor;
 		}
 		public int restador(List<Integer> lista) {
-
+			
+			valor = 0;
 			lista.stream().forEach((numero)->{
 				valor = valor - numero;
 			});
 			return valor;
 		}
 		public int multiplicador(List<Integer> lista) {
-
+			
+			valor = 0;
 			lista.stream().forEach((numero)->{
 				valor = valor * numero;
 			});
