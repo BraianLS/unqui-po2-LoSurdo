@@ -3,10 +3,10 @@ package ar.edu.unq.po2.tp4;
 import java.util.ArrayList;
 
 public class Supermercado {
-		String nombre;
-		String direccion;
-		ArrayList<Producto> productos = new ArrayList<Producto>();
-		Double precioTotal;
+		private String nombre;
+		private	String direccion;
+		private	ArrayList<Producto> productos = new ArrayList<Producto>();
+		private	Double precioTotal;
 		public String getNombre() {
 			return nombre;
 		}

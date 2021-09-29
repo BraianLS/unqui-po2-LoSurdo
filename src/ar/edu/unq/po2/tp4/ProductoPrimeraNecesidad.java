@@ -2,7 +2,7 @@ package ar.edu.unq.po2.tp4;
 
 public class ProductoPrimeraNecesidad extends Producto{
 			
-			double descuento = 10;
+			private double descuento = 10;
 			
 			public double getDescuento() {
 				return descuento;
