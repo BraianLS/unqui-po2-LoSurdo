@@ -1,0 +1,24 @@
+1. Las interfaces en java permiten conectar a diferentes tipos de clases que solo tienen en comun uno/unos mensajes en particular, y de esta manera, al usar las interfaces como un reemplazo al tipo de clase a utilizar, permite aplicar polimorfismo, ya que las interfaces tratan polimorficamente a cada clase que la implemente,independientemente del tipo en si de la clase. Por ejemplo, se podria tener un inmobiliaria que posea una lista de propiedades, dentro de ellas, las casas,asi como los departamento,son parte de esta,y a estos se les podria hacer un sistema de herencia sin problema(por decir,se podria decir que entienden mensajes como "metrosCuadrados()" o "getDireccion()"), y tambien mandarle mensajes en particular como: "precioPropiedad()", pero si se tiene en cuenta como propiedad algo que no es una casa o un departamento, por ejemplo una lancha, no se podria tratar polimorficamente a esta con la casa o el departamento,ya que son tipos distintos que tienen metodos distintos, que no tendria sentido alguno implementar mediante herencia a nuestro modelo del tipo lancha, pero en cambio, si implementamos una interface (llamada propiedad por ejemplo) que tenga en comun por ejemplo el mensaje de "precioPropiedad()", se podria enviar dicho mensaje a cualquiera de estos tipos,reemplazandolos por la interface en si en la parte de especificar el tipo de dato que espera recibir.
+
+2. No siempre el esquema de los atributos y metodos que va a utilizar una clase abstracta para luego ser heredada funciona, hay veces donde hay diversos objetos que deben ser tratados de forma polimorfica pero que cada uno tiene un comportamiento y atributos completamente distintos, y solo comparten uno/unos mensajes en particular.
+
+3. Las clases abstractas de permiten heredar comportamiento y atributos especificos, cosas que las interfaces no pueden,estas ultimas solo te permiten definir un contrato con las clases que lo implementen de que tendran si o si esos mensajes que las interfaces definen.
+
+4. No, a diferencia de las clases, no es posible instanciar una interface.
+
+5. Podrian romper el código en alguna parte,además de que se podria perder el polimorfismo.
+
+6. No es necesaria en otros lenguajes dinamicamente tipados, ya que estos toman cualquier tipo de objeto que le pases sin tener que especificarlo, por lo cual es innecesario el uso de una interface. 
+
+
+
+
+¿Que ocurriria si utiliza en lugar de XXX, WWW y ZZZ las clases e interfaces recientemente estudiadas?
+
+Se podria hacer el cambio sin problemas, siempre y cuando si al usar interfaces los mensajes que a las colecciones se les manda cumplan con el contrato.
+
+De wollok a Java: Personas y Mascotas
+
+4. No, no era necesario ya que Wollok al ser un lenguaje dinamicamente tipado las trataba polimorficamente, el mecanismo de abstraccion que permite esto(si entendí bien la pregunta), es el polimorfismo.
+
+5. Si, si se coloca a ambas en una superclase (que puede ser abstracta) en la cual se declare el metodo getName(). Para mantener el polimorfismo en java, se debe dar uso a las interfaces e implementar estas interfaces a las clases que las necesiten, formando así un contrato entre ellas, las cuales deben cumplir con los metodos declarados en la interface.
