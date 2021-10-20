@@ -1,0 +1,10 @@
+Violaciones al principio SOLID:
+
+La clase ClienteEMail viola el principio de Open/Closed Principle (OCP) (Principio abierto / cerrado) al poseer muchos atributos los cuales su seguridad está colocada en default(es decir,sin especificar su nivel de accesso, por lo tanto no son privadas) y eso permite que se pueda acceder y modificar dichos atributos desde fuera. 
+Esto se podria solucionar al restringir el acceso de dichos atributos a solo la propia clase (dandoles el estado privated a los atributos)
+
+Tambien pienso(quizás bastante rebuscado), que quizás la clase ClienteEmail puede estar violando el principio de S – Single Responsability Principle (SRP) (Principio de responsabilidad única), al estar realizando tanto las acciones de conectarse y enviar mensajes como las de contar mensajes borrados, contar mensajes en inbox, recibir mensajes nuevos, eliminar borrados, borrar correos. Esto se podria solucionar delegando la responsabilidad del control de la caja de correos a una nueva clase llamada CasillaDeCorreo(por ejemplo) que se encargue de las acciones sobre el inbox y los de la seccion de borrados.
+
+La clase ServidorPop está violando el principio I – Interface Segretation Principle (ISP) (Principio de segregación de interfaz) , al estar implementando muchos mensajes que quiza no eran necesarios que implemente, esto se podria solucionar dividiendo las responsabilidades de la interfaz IServidor e implementando solo la que necesita usar la clase ServidorPop
+
+Como adicional, correo deberia de contener los atributos: String asunto, String destinatario y String cuerpo, debido a que son inicializados con esos parametros en su constructor, y estos deberian ser privados(para respetar el principio Open/Closed)
