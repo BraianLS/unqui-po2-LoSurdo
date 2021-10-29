@@ -1,0 +1,40 @@
+1.2. En la intención del patrón se indica que el cliente debe poder tratar de manera uniforme tanto a objetos individuales como compuestos. ¿ Cómo se logra esto con el patrón Composite?
+
+Rta: Esto se logra mediante el uso de una interfaz que contenga los metodos requeridos que necesitará el cliente, utilizando de esta manera dicha interfaz tanto para los objetos individuales (llamados leaf u hoja) como para los objetos compuestos (llamado composite, objetos que podrian contener a su vez otros objetos individuales o compuestos), de esta forma, se podrá tratar de forma polimorfica tanto a los objetos compuestos como a los individuales, ya que al haber implementado la interfaz con esos mensajes comunes, la responsabilidad se irá delegando a cada uno de los objetos hasta llegar a los objetos individuales que se encargaran de toda la lógica necesaria. 
+
+3. Explique en qué casos aplicaria el patron.
+
+El uso del patrón Composite sólo tiene sentido cuando el modelo central de la aplicación puede representarse en forma de árbol. Por ejemplo, si se tiene dos tipos de objetos: Productos y Cajas. Una Caja puede contener varios Productos(leaf) así como cierto número de Cajas más pequeñas(lo que lo vuelve un Composite). Estas Cajas pequeñas también pueden contener algunos Productos o incluso Cajas más pequeñas, y así sucesivamente. Si se quisiera por ejemplo, determinar el precio total de un pedido que contiene una Caja con muchas cajas y productos individuales dentro, aquí el patrón Composite nos seria de mucha utilidad, ya que utilizando dicho patron podriamos hacer que simplemente un producto devuelva el precio de si mismo, y si quisieramos saber el precio de una caja, esta se encargaria de ir preguntando a cada uno de los objetos (del tipo de la interfaz declarada) cual es el precio, si es una caja,delegaria otra vez la responsabilidad a los objetos que tenga dentro,así hasta llegar a los objetos individuales y estos se encargarian de retornar sus valores,así hasta completar todo el pedido,y de esta forma retornar el valor total. 
+Lo positivo de esta solución, es que no necesitamos saber cuantas cajas hay dentro de otra,por lo cual,evitariamos el trabajo tedioso y complicado de tener que conocer a las clases involucradas y la cantidad de anidaciones que tendria cada una.
+
+4.5 Dentro de las consecuencias, se indica que los clientes deben mantenerse simples y no deben ser conscientes si están interactuando con un objeto hoja o una composición. ¿Que elementos de la programacion orientada a objetos hacen posible ?
+
+Los elementos que permiten que un cliente pueda mantenerse simple son las interfaces, mediante el uso e implementacion de dichas interfaces, en vez de tener que andar trabajando y distinguiendo individualmente el tipo de clase con el cual se está trabajando, simplemente se pasa en reemplazo del tipo, la interfaz que estas distintas clases implementan, de esta forma, se puede mantener el polimorfismo, tratando a todas las clases de manera polimorficas entre si.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+							EJERCICIO 2 - CULTIVOS
+
+1. Que impacto genera en su diseño el hecho de compartir instancias de parcelas entre composiciones? Es decir, que la misma instancia se encuentre en más de una composición.
+
+Rta: ?
+
+2....
+3.Describa las alternativas que puede utilizar para calcular la ganancia anual. Relacione las alternativas.
+
+Rta: La ganancia anual total se podria calcular como la suma de las ganancias totales anuales tanto de trigo como de soja, si se quisiera calcular las ganancias total de trigo(y soja respectivamente) se calcularian a partir de las subdivisiones que tengan en la parcela utilizando un filtro(el cual probablemente deberia utilizar una interfaz en vez de un tipo en especifico,ya que deberia ir buscando aquel cultivo especifico requerido y los mixtos que contengan dentro suyo dicho cultivo),pero esta solucion no me gusta mucho, otra alternativa que se me ocurre(la cual me hace igual un poco de ruido) es que la interface principal (o una subinterface) implemente dos metodos adicionales,cada uno enfocado en devolver el valor que le corresponde segun lo que especifique,por ejemplo un metodo llamado getGananciaAnualTrigo que si es trigo retornará su valor dado en getGananciaAnual,si es soja retornará 0 y viceversa.
+
+4- Explique la discusión sobre quiénes deben implementar las operaciones de agregado y borrado de hijos.
+
+Rta: Los métodos para añadir y eliminar elementos hijos se implementan dentro del composite, sin embargo, para que el cliente pueda tratar polimorficamente tanto al composite como al leaf, estos metodos se pueden declarar en la interfaz componente, pero esto a su vez provocaria una violación del Principio de segregación de la interfaz porque los métodos de la clase hoja estarían vacíos. No obstante, el cliente podrá tratar a todos los elementos de la misma manera, incluso al componer el árbol, logrando así que la relacion entre el composite y leaf sea polimorfica entre si.
+
+
+5. Sobre su implementación, indique los roles que desempeñan cada una de las clases diseñadas en relación al patrón Composite.
+
+Cliente: La clase "PorcionProductiva" seria el cliente el cual debe tratar con los distintos tipos de cultivos indistintamente de si son trigo,soja o mixto.
+Component: La interfaz "Cultivo" seria el component el cual define los metodos que son comunes tanto para los elementos simples individuales asi como los compuestos.
+Composite: La clase "CompuestoMixto" seria el composite,es decir,el elemento compuesto el cual es más complejo que los elementos simples,ya que este puede contener a varios elementos simples y compuestos a su vez dentro de si.
+Leaf: Las clases "Trigo" y "Soja" serian las leaf u hojas, es decir, aquellos elementos individuales encargados del comportamiento lógico final que se espera obtener de estos.
+
+
+
+
