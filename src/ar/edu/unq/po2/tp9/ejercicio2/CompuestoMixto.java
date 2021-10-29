@@ -4,7 +4,16 @@ import java.util.ArrayList;
 
 public class CompuestoMixto implements Cultivo{
 
-	private ArrayList<Cultivo> listaDeCultivos = new ArrayList<Cultivo>();
+	private ArrayList<Cultivo> listaDeCultivos;
+	
+	public CompuestoMixto() {
+		super();
+		this.listaDeCultivos = new ArrayList<Cultivo>();;
+	}
+	public CompuestoMixto(ArrayList<Cultivo> listaDeCultivos) {
+		super();
+		this.listaDeCultivos = listaDeCultivos;
+	}
 	
 	@Override
 	public double getGananciaAnual() {
@@ -36,6 +45,16 @@ public class CompuestoMixto implements Cultivo{
 			gananciaAnual += cultivo.getGananciaAnualTrigo() / 4; //Divide por 4 debido a que los cultivosMixtos se dividen en 4
 		}
 		return gananciaAnual;
+	}
+	@Override
+	public void agregar(Cultivo cultivo) {
+		listaDeCultivos.add(cultivo);
+		
+	}
+	@Override
+	public void eliminar(Cultivo cultivo) {
+		listaDeCultivos.remove(cultivo);
+		
 	}
 	
 

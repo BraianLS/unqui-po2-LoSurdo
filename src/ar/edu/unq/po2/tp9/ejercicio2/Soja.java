@@ -20,4 +20,16 @@ public class Soja implements Cultivo{
 		return 0;
 	}
 
+	@Override
+	public void agregar(Cultivo cultivo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eliminar(Cultivo cultivo) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
