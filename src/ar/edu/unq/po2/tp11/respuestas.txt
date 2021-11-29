@@ -1,0 +1,17 @@
+Responda:
+a. ¿Dónde se define el esqueleto del algoritmo?
+
+-En la abstract class de la cual luego heredaran las subclases concretas.
+
+b. ¿Se puede redefinir el esqueleto?
+
+-De poder, se puede, pero no es recomendable, ya que lo ideal es que la clase abstracta no se
+toque una vez completada, y simplemente extiendan de esta con el comportamiento nuevo que se necesite agregar y/o rescriban un metodo existente en una subclase, ya que el editar directamente el esqueleto podria traer problemas y errores, además de que implica una violacion del principio abierto-cerrado.
+
+c. ¿Qué es lo que se puede redefinir?
+
+-Siguiendo lo que respondi previamente, se puede redefinir los metodos que heredan las subclases de la clase abstracta.
+
+d. ¿Qué es un hook method?
+
+Un hook method es un metodo que se integra al cuerpo principal del algoritmo de la clase abstracta, pero que no hace nada en particular, sin embargo, para casos en las que las subclases si deban hacer algo en ese momento, podrán sobreescribir dicho metodo con el comportamiento que necesiten.
