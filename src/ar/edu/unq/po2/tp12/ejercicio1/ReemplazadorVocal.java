@@ -11,17 +11,15 @@ public abstract class ReemplazadorVocal {
 	
 	
 	public final String reemplazarTodasLasVocales(String texto) {
-		String textoNuevo = "caca";
-
+		
+		String textoNuevo = "";
 		for(char c: this.convertirACaracteres(texto)) {
-			
+		//TODO: ver q pasa aca
 		//	textoNuevo.concat(this.reemplazarSiCorresponde(String.valueOf(c)));
 			String charComoString = "" + c;
 			textoNuevo.concat(charComoString);
 		//	textoNuevo.concat(this.reemplazarSiCorresponde(charComoString));
 		}
-		char c = 'a';
-		String charComoString = "" + c;
 		return textoNuevo;
 		
 	}

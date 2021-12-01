@@ -22,8 +22,7 @@ class Ejercicio1Test {
 
 	@Test
 	void testEncriptar() {
-	//	assertEquals("Pipi is il treodur", encriptadorNaive.encriptar("Pepe es el traidor"));
-		assertEquals(true,true);
+		assertEquals("Pipi is il treodur", encriptadorNaive.encriptar("Pepe es el traidor"));
 	}
 
 	@Test
